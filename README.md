@@ -1,7 +1,28 @@
 # Archiver
 
+A demo application to imitate the RingCentral Archiver.
 
-## Local Docker Swarm
+## Description
+
+It's an Elixir Umbrella application, which include these sub-applications:
+
+- `archiver_fetcher` - fetch recordings from the Platform API.
+- `archiver_dropbox` - Deliver data to Dropbox with a http pooling.
+- `archiver_google_drive` - Deliver data to Google Drive with a per-user worker system.
+- `archiver_shared` - Common lib for other applications.
+- `archiver_ui` - The Web UI
+
+## Usage
+
+### Running locally
+
+```
+$ iex -S mix
+```
+
+Visit http://localhost:5002 for the UI.
+
+### Running in a local Docker Swarm
 
 https://docs.docker.com/engine/swarm/stack-deploy/
 
