@@ -1,21 +1,7 @@
 # Archiver.UI
 
-**TODO: Add description**
+The Web UI
 
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `archiver_ui` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:archiver_ui, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/archiver_ui](https://hexdocs.pm/archiver_ui).
-
+- `Archiver.UI.FetcherAdapter` for accessing Fetcher API.
+- `Archiver.UI.GoogleDriveAdapter` for accessing Google Drive API.
+- `Archiver.UI.Web.Router` The web interface.

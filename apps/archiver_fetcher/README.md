@@ -1,21 +1,7 @@
 # Archiver.Fetcher
 
-**TODO: Add description**
+Fetch recordings from the Platform API.
 
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `archiver_fetcher` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:archiver_fetcher, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/archiver_fetcher](https://hexdocs.pm/archiver_fetcher).
-
+- `Archiver.Fetcher.Store` as the Data Store.
+- `Archiver.Fetcher.Client` for fetching recorings and store them.
+- `Archiver.Fetcher.Web.Router` expose HTTP API for inter-application communication.
