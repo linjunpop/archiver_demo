@@ -1,0 +1,59 @@
+<main>
+  <div class="block">
+    <h1>Fetcher</h1>
+    <h2>Listing Pending items</h2>
+    <p>Size: <%= Enum.count(pending_recordings) %></p>
+
+    <form action="/fetch-recordings">
+      <input type="submit" value="Fetch some recordings" />
+    </form>
+
+    <table>
+      <thead>
+        </tr>
+          <th>ID</th>
+          <th>User ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= for {id, recording} <- pending_recordings do %>
+          <tr>
+            <td><%= id %></td>
+            <td><%= recording["user_id"] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="block">
+    <h1>Google Drive</h1>
+    <h2>Listing Workers</h2>
+
+    <form action="/gdrive-work">
+      <input type="submit" value="Work" />
+    </form>
+
+    <table>
+      <thead>
+        </tr>
+          <th>Children</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= for child <- google_drive_workers do %>
+          <tr>
+            <td><%= child %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<style>
+main {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+</style>

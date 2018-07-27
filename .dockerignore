@@ -1,0 +1,23 @@
+.git
+.gitignore
+
+docker-compose.yml
+swarm.yml
+Dockerfile
+Dockerfile.*
+.dockerignore
+
+# Elixir
+deps
+_build
+doc
+test
+
+.elixir_ls
+.vscode
+
+erl_crash.dump
+
+.DS_Store
+
+tmp

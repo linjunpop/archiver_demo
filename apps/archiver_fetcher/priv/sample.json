@@ -1,0 +1,99 @@
+{
+    "uri": "http://example.com/restapi/v1.0/account/000000000/call-log?view=Simple&showBlocked=true&withRecording=false&dateFrom=2018-07-02T08:21:00.000Z&page=1&perPage=100",
+    "records": [
+        {
+            "uri": "http://example.com/restapi/v1.0/account/000000000/call-log/QDiZC3-T4dNNQA?view=Simple",
+            "id": "QDiZC3-T4dNNQA",
+            "sessionId": "3032755006",
+            "startTime": "2018-07-03T08:16:05.491Z",
+            "duration": 62,
+            "type": "Voice",
+            "direction": "Outbound",
+            "action": "VoIP Call",
+            "result": "Call connected",
+            "to": {
+                "phoneNumber": "+00000000",
+                "name": "XMN Jun2",
+                "location": "Modesto, CA"
+            },
+            "from": {
+                "phoneNumber": "+00000000",
+                "name": "XMN Jun"
+            },
+            "recording": {
+                "uri": "http://example.com/restapi/v1.0/account/000000000/recording/1111111111",
+                "id": "1111111111",
+                "type": "OnDemand",
+                "contentUri": "https://example.com/restapi/v1.0/account/000000000/recording/1111111111/content"
+            }
+        },
+        {
+            "uri": "http://example.com/restapi/v1.0/account/000000000/call-log/QDiXqDobhElNQA?view=Simple",
+            "id": "QDiXqDobhElNQA",
+            "sessionId": "3032754006",
+            "startTime": "2018-07-03T08:16:01.554Z",
+            "duration": 1,
+            "type": "Voice",
+            "direction": "Inbound",
+            "action": "Phone Call",
+            "result": "Missed",
+            "to": {
+                "phoneNumber": "+00000000"
+            },
+            "from": {
+                "extensionNumber": "101",
+                "name": "XMN Jun"
+            }
+        },
+        {
+            "uri": "http://example.com/restapi/v1.0/account/000000000/call-log/QDiWRPSjJr9NQA?view=Simple",
+            "id": "QDiWRPSjJr9NQA",
+            "sessionId": "3032753006",
+            "startTime": "2018-07-03T08:15:16.288Z",
+            "duration": 3,
+            "type": "Voice",
+            "direction": "Inbound",
+            "action": "Phone Call",
+            "result": "Missed",
+            "to": {
+                "phoneNumber": "+00000000"
+            },
+            "from": {
+                "extensionNumber": "101",
+                "name": "XMN Jun"
+            }
+        },
+        {
+            "uri": "http://example.com/restapi/v1.0/account/000000000/call-log/QDiAEJ0dTh9NQA?view=Simple",
+            "id": "QDiAEJ0dTh9NQA",
+            "sessionId": "3032737006",
+            "startTime": "2018-07-03T08:10:43.710Z",
+            "duration": 1,
+            "type": "Voice",
+            "direction": "Inbound",
+            "action": "Phone Call",
+            "result": "Missed",
+            "to": {
+                "phoneNumber": "+00000000"
+            },
+            "from": {
+                "extensionNumber": "101",
+                "name": "XMN Jun"
+            }
+        }
+    ],
+    "paging": {
+        "page": 1,
+        "perPage": 100,
+        "pageStart": 0,
+        "pageEnd": 3
+    },
+    "navigation": {
+        "firstPage": {
+            "uri": "http://example.com/restapi/v1.0/account/000000000/call-log?view=Simple&showBlocked=true&withRecording=false&dateFrom=2018-07-02T08:21:00.000Z&page=1&perPage=100"
+        },
+        "lastPage": {
+            "uri": "http://example.com/restapi/v1.0/account/000000000/call-log?view=Simple&showBlocked=true&withRecording=false&dateFrom=2018-07-02T08:21:00.000Z&page=1&perPage=100"
+        }
+    }
+}

@@ -1,0 +1,102 @@
+version: "3"
+
+volumes:
+  google-volume:
+    driver: local
+  dropbox-volume:
+    driver: local
+
+services:
+  archiver_fetcher:
+    build:
+      context: .
+      args:
+        NAME: archiver_fetcher
+    environment:
+      FETCHER_PORT: 5001
+    networks:
+      main-network:
+        aliases:
+          - fetcher
+    command: ./app.run foreground
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+  archiver_google_drive:
+    build:
+      context: .
+      args:
+        NAME: archiver_google_drive
+    environment:
+      FETCHER_API_BASE: "http://fetcher:5001"
+      GOOGLE_DRIVE_PORT: 5003
+    networks:
+      main-network:
+        aliases:
+          - google_drive
+    volumes:
+      - "./tmp:/tmp"
+    command: ./app.run foreground
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+
+  archiver_dropbox:
+    build:
+      context: .
+      args:
+        NAME: archiver_dropbox
+    environment:
+      FETCHER_API_BASE: "http://fetcher:5001"
+    networks:
+      main-network:
+        aliases:
+          - dropbox
+    volumes:
+      - "./tmp:/tmp"
+    command: ./app.run foreground
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+
+  archiver_ui:
+    build:
+      context: .
+      args:
+        NAME: archiver_ui
+    environment:
+      FETCHER_API_BASE: "http://fetcher:5001"
+      GOOGLE_DRIVE_API_BASE: "http://google_drive:5003"
+      UI_PORT: 5002
+    networks:
+      main-network:
+        aliases:
+          - ui
+    volumes:
+      - "./tmp:/tmp"
+    command: ./app.run foreground
+    ports:
+      - 5002:5002
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+
+  # visualizer:
+  #   image: dockersamples/visualizer:stable
+  #   ports:
+  #     - "8080:8080"
+  #   volumes:
+  #     - "/var/run/docker.sock:/var/run/docker.sock"
+  #   deploy:
+  #     placement:
+  #       constraints: [node.role == manager]
+  #   networks:
+  #     - main-network
+
+networks:
+  main-network:
